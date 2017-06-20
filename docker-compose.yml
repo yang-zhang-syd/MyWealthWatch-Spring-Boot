@@ -2,6 +2,12 @@ version: '2'
 
 services:
   mww:
+    build:
+      context:.
+      dockerfile: Dockerfile
     image: java/mww
     ports:
       - "8090:8080"
+    volumes:
+      # Update first part before ':' to the path you want to keep log files.
+      - C:/logs:/usr/logs
